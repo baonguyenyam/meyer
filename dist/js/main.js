@@ -27,7 +27,17 @@ function queryAll() {
 }
 
 function jsonLoad(path, success, error) {
-  var xhr = new XMLHttpRequest();
+  var xhr = null;
+
+  try {
+    xhr = new XMLHttpRequest();
+  } catch (e) {
+    try {
+      xhr = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+  }
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -316,8 +326,8 @@ function ___filterData(e, MEYER_APP) {
 
 var MEYER_APP = {
   // REST FULL API 
-  // MEYER_REST_API: './data/data.json',
-  MEYER_REST_API: 'http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline',
+  MEYER_REST_API: './data/data.json',
+  // MEYER_REST_API: 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline',
   MEYER_DEFAULT_PAGE: parseInt(getParameterByName('showItems')) ? parseInt(getParameterByName('showItems')) : 6,
   MEYER_CURRENT_QUERY: '&color=' + getParameterByName('color') + '&type=' + getParameterByName('type') + '&rating=' + getParameterByName('rating') + '&price=' + getParameterByName('price'),
   MEYER_APP_PAGE: [9, 12, 15],

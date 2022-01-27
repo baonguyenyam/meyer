@@ -14,7 +14,16 @@ function queryAll(showItems = '', page = '', color = '', type = '', rating = '',
     return '?showItems=' + showItems + '&page=' + page + '&color=' + color + '&type=' + type + '&rating=' + rating + '&price=' + price + '&sort=' + sort + '';
 }
 function jsonLoad(path, success, error) {
-    var xhr = new XMLHttpRequest();
+    var xhr = null;
+    try {
+        xhr = new XMLHttpRequest();
+    } catch(e) {
+        try {
+            xhr = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch(e) {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
