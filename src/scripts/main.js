@@ -8,7 +8,7 @@ var MEYER_APP = {
 	MEYER_APP_PAGE: [9, 12, 15],
 	MEYER_APP_PRICE_RANGE: [0,20],
 	MEYER_APP_TYPE: ['bronzer', 'blush', 'lip_liner', 'foundation', 'eyeshadow', 'eyeliner', 'nail_polish', 'lipstick', 'mascara'],
-	MEYER_APP_COLOR: ['Caramel', 'Classic Ivory', 'Coconut', 'Creamy Natural', 'Honey Beige', 'Ivory', 'Natural Beige', 'Nude', 'Porcelain Ivory', 'Pure Beige', 'Sandy Beige', 'Warm Porcelain'],
+	MEYER_APP_COLOR: [{hex_value: '#D39D7B', colour_name: 'Caramel'},{hex_value: '#F5CAB9', colour_name: 'Classic Ivory'},{hex_value: '#B37560', colour_name: 'Coconut'},{hex_value: '#F3BEAC', colour_name: 'Creamy Natural '},{hex_value: '#E4A890', colour_name: 'Honey Beige '},{hex_value: '#F6D2BC', colour_name: 'Ivory'},{hex_value: '#E2B598', colour_name: 'Natural Beige'},{hex_value: '#F1BEAB', colour_name: 'Nude '},{hex_value: '#F8E0D4', colour_name: 'Porcelain Ivory'},{hex_value: '#EEBAA4', colour_name: 'Pure Beige'},{hex_value: '#EFC2A1', colour_name: 'Sandy Beige '},{hex_value: '#FAE2D6', colour_name: 'Warm Porcelain'}],
 	buildShowItem: () => {
 		___buildShowItem(MEYER_APP);
 	},
@@ -30,6 +30,9 @@ var MEYER_APP = {
 	filterData: (e) => {
 		___filterData(e, MEYER_APP);
 	},
+	buildSort: () => {
+		___buildSortItem(MEYER_APP);
+	},
 	buildItems: (e) => {
 		___buildItems(e);
 	},
@@ -42,6 +45,7 @@ var MEYER_APP = {
 				MEYER_APP.buildcustomType();
 				MEYER_APP.buildcustomRating();
 				MEYER_APP.buildcustomColors();
+				MEYER_APP.buildSort();
 				MEYER_APP.filterData(data);
 			},
 			(xhr) => {

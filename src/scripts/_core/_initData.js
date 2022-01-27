@@ -19,9 +19,9 @@ function ___filterData(e, MEYER_APP) {
 		for (let key in m) {
 			let tmpData = [];
 			if (Object.hasOwnProperty.call(m, key)) {
-				tmpData = e.filter(function(activity) {
-					return activity.product_colors.some(function(el) {
-						return el.colour_name === m[key]+' ' || el.colour_name === m[key];
+				tmpData = e.filter(function (activity) {
+					return activity.product_colors.some(function (el) {
+						return el.colour_name === m[key] + ' ' || el.colour_name === m[key];
 					});
 				});
 				AlltmpData = AlltmpData.concat(tmpData);
@@ -39,12 +39,25 @@ function ___filterData(e, MEYER_APP) {
 			return el.rating >= parseInt(getParameterByName('rating')) && el.rating < (parseInt(getParameterByName('rating')) + 1);
 		});
 	}
+	if (getParameterByName('sort') && getParameterByName('sort') === 'desc') {
+		e.sort(function (a, b) {
+			return parseInt(b.price) - parseInt(a.price);
+		});
+	} else if (getParameterByName('sort') && getParameterByName('sort') === 'asc') {
+		e.sort(function (a, b) {
+			return parseInt(a.price) - parseInt(b.price);
+		});
+	}
 	// NEW DATA 
-	if(e.length <= 0){
+	if (e.length <= 0) {
 		___buildItemsEmpty()
 	} else {
 		$('.itemsall').text(e.length);
-		console.log(e);
+		// for (const key in e) {
+		// 	if (Object.hasOwnProperty.call(e, key)) {
+		// 		console.log(e[key].product_colors);
+		// 	}
+		// }
 	}
 	// PAGING
 	if (parseInt(getParameterByName('page'))) {

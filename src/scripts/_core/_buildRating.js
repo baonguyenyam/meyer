@@ -6,7 +6,7 @@ function ___buildcustomRating() {
 			'</label></div>');
 	}
 	$('#customRating').on('change', () => {
-		window.location.href = queryAll(getParameterByName('showItems'), getParameterByName('page'), getParameterByName('color'), getParameterByName('type'), $('#customRating input:checked').val(), getParameterByName('price'));
+		window.location.href = queryAll(getParameterByName('showItems'), getParameterByName('page'), getParameterByName('color'), getParameterByName('type'), $('#customRating input:checked').val(), getParameterByName('price'), getParameterByName('sort'));
 	});
 	if (getParameterByName('rating')) {
 		$('#customRating input[value="' + getParameterByName('rating') + '"]').prop('checked', true);

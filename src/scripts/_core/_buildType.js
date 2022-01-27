@@ -5,7 +5,7 @@ function ___buildcustomType(MEYER_APP) {
 		}
 	}
 	$('#customType').on('change', () => {
-		window.location.href = queryAll(getParameterByName('showItems'), getParameterByName('page'), getParameterByName('color'), $('#customType input:checked').map(function () { return $(this).val(); }).get().join(','), getParameterByName('rating'), getParameterByName('price'));
+		window.location.href = queryAll(getParameterByName('showItems'), getParameterByName('page'), getParameterByName('color'), $('#customType input:checked').map(function () { return $(this).val(); }).get().join(','), getParameterByName('rating'), getParameterByName('price'), getParameterByName('sort'));
 	});
 	if (getParameterByName('type')) {
 		let m = getParameterByName('type').split(',');
