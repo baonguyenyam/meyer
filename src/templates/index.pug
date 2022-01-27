@@ -1,0 +1,68 @@
+extends _layout/layout
+
+block variables
+	- var title = 'MEYER Products'
+	- var description = 'Description for home page'
+	- var bodyclass = 'home'
+	- var href = "/index.html"
+block body
+	section.products
+		.container.pt-5
+			.border-bottom.mb-4.pb-2
+				.row
+					.col.mr-auto
+						h2.d-flex.align-items-center PRODUCTS 
+							span.badge.badge-success.itemsall.small.ml-2
+					.col-auto
+						select#showItems.custom-select.mr-sm-2
+							option(value='6') Default
+		.container.py-3
+			.row 
+				.col-lg-3.order-lg-1.order-2
+					.d-flex.mb-4.justify-content-between.align-items-center
+						h4 Filter by
+						a.filter_by.small.btn.btn-danger.btn-small(href="./") Clear
+					h6.pb-3.mb-3.border-bottom Type 
+					.mb-4
+						#customType
+					h6.pb-3.mb-3.border-bottom Price
+					.mb-4
+						input#customPrice.custom-range(type="range")
+					h6.pb-3.mb-3.border-bottom Rating
+					.mb-4
+						#customRating
+					h6.pb-3.mb-3.border-bottom Color
+					.mb-4
+						#customColors
+				.col-lg-9.order-lg-1.order-1
+					.row#items
+						//- .col-sm-6.col-md-4.item
+							.product-item
+								img(src="./img/demo1.png")
+								h5.my-2 Product name
+								p.rating
+									i.fas.fa-star
+									i.fas.fa-star
+									i.fas.fa-star
+									i.fas.fa-star.deactive
+									i.fas.fa-star.deactive
+								p.price $32
+								p.more 
+									a.btn.btn-primary(href="javascript:void(0);", data-toggle="modal", data-target="#staticBackdrop") View More
+					.row 
+						.col
+							nav.d-flex.justify-content-end
+								ul.pagination#paging
+									li.page-item.disabled
+										span.page-link Pages
+									
+
+	// Modal
+	#staticBackdrop.modal.fade(data-backdrop="static", data-keyboard="false", tabindex="-1", aria-labelledby="staticBackdropLabel", aria-hidden="true")
+		.modal-dialog.modal-dialog-centered.modal-xl
+			.modal-content
+				.modal-header
+					h5#staticBackdropLabel.modal-title 
+					button.close(type="button", data-dismiss="modal", aria-label="Close")
+						i.fas.fa-times
+				.modal-body
