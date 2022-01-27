@@ -1,8 +1,11 @@
 function ___buildcustomRating() {
 	let arrayRating = 5;
 	for (let index = 0; index < arrayRating; index++) {
-		$('#customRating').append('<div class="form-check"><input class="form-check-input" id="inlineRadiobox_' + (index + 1) + '" type="radio" value="' + (index + 1) + '" name="inlineRadioOptions" ><label class="form-check-label" for="inlineRadiobox_' + (index + 1) + '">' + (index + 1) +
-			' stars' +
+		let rank = ''
+		for (let u = 0; u < arrayRating-index; u++) {
+			rank += '<i class="fas fa-star text-warning"></i>';
+		}
+		$('#customRating').append('<div class="form-check"><input class="form-check-input" id="inlineRadiobox_' + (arrayRating-index) + '" type="radio" value="' + (arrayRating-index) + '" name="inlineRadioOptions" ><label class="form-check-label" for="inlineRadiobox_' + (arrayRating-index) + '">' + rank +
 			'</label></div>');
 	}
 	$('#customRating').on('change', () => {

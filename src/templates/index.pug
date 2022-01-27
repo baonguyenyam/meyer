@@ -10,14 +10,16 @@ block body
 		.container.pt-5
 			.border-bottom.mb-4.pb-2
 				.row
-					.col.mr-auto
+					.col-md.mr-auto
 						h2.d-flex.align-items-center PRODUCTS 
 							span.badge.badge-success.itemsall.small.ml-2
-					.col-auto.pr-0
-						#sortItems
-					.col-auto
-						select#showItems.custom-select.mr-sm-2
-							option(value='6') Default
+					.col-md-auto
+						.row
+							.col-auto.pr-0
+								#sortItems
+							.col-auto
+								select#showItems.custom-select.mr-sm-2
+									option(value='6') Default
 		.container.py-3
 			.row 
 				.col-lg-3.order-lg-1.order-2

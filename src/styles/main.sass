@@ -5,6 +5,7 @@
 // SET VARIABLES
 $nguyen-main-color: #1968b3
 $nguyen-sec-color: #f26528
+$nguyen-price: #f22828
 $nguyen-star-color: #ffeb3b
 $nguyen-border: #ddd
 $nguyen-copyright-bg: #f9f9f9
@@ -23,8 +24,37 @@ body
 		padding: .25rem .5rem
 		font-size: .85rem
 		line-height: 1
+	.pagination
+		.page-link
+			color: $nguyen-copyright-text
 
 section.products
+	#customType
+		.form-check
+			display: flex
+			align-items: center
+			.form-check-input
+				width: 20px
+				margin-top: 0
+				height: 20px
+				border-radius: 3px
+				border: 1px solid #ddd
+			.form-check-label
+				padding-left: .5rem
+				color: darken($nguyen-border, 40%)
+	#customRating
+		.form-check
+			display: flex
+			align-items: center
+			.form-check-input
+				width: 20px
+				margin-top: 0
+				height: 20px
+				border-radius: 3px
+				border: 1px solid #ddd
+			.form-check-label
+				padding-left: .5rem
+				color: darken($nguyen-border, 40%)
 	#customColors
 		display: flex
 		flex-wrap: wrap
@@ -80,43 +110,68 @@ section.products
 		.product-item
 			display: flex
 			height: 100%
-			align-items: center
+			// align-items: center
 			flex-direction: column
 			border: 1px solid darken(#fff, 5%)
 			border-radius: 3px
 			padding: 1.5rem
 			h5 
-				font-weight: normal
+				font-weight: 300
 				height: 3.1rem
 				text-overflow: ellipsis
 				overflow: hidden
 				width: 100%
 				display: block
+				color: lighten(#000, 30%)
 			.price
-				font-size: 1.1rem
-				font-weight: bold
-				color: $nguyen-sec-color
+				font-size: 1rem
+				font-weight: 400
+				color: $nguyen-price
 			.rating 
+				font-size: .65rem
+				margin-bottom: 0
 				.fa-star
 					color: $nguyen-star-color
 					&.deactive
 						color: darken(#fff, 15%) !important
+			.brand
+				font-size: .8rem
+				font-weight: 400
+				text-transform: Capitalize
+				color: darken($nguyen-border, 40%)
 			.more
 				margin-bottom: 0
+				a 
+					background: lighten(#000, 70%)
+					border-color: lighten(#000, 70%)
+					border-radius: 2px
+					text-transform: uppercase
+					font-size: .8rem
 			&:hover 
 				background: #fff
 				border: 1px solid $nguyen-border
 				box-shadow: 0 0 18px #0000001c
+				h5 
+					color: #000
+				.more 
+					a 
+						background: $nguyen-main-color
+						border-color: $nguyen-main-color
+						color: #fff
 
 #staticBackdrop
 	.item
 		.product-item
-			h5 
-				font-weight: normal
+			h3 
+				font-weight: 300
+				display: block
+				color: lighten(#000, 30%)
+				margin-bottom: 2rem
+				margin-top: 1.5rem
 			.price
 				font-size: 1.1rem
 				font-weight: bold
-				color: $nguyen-sec-color
+				color: $nguyen-price
 			.rating 
 				.fa-star
 					color: $nguyen-star-color
@@ -128,4 +183,11 @@ section.products
 					height: 30px
 					width: 30px
 					position: relative
-					
+			.more
+				a 
+					background: $nguyen-main-color
+					border-color: $nguyen-main-color
+					color: #fff
+					border-radius: 2px
+					text-transform: uppercase
+					font-size: .8rem
