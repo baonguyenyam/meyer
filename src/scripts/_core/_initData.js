@@ -53,11 +53,6 @@ function ___filterData(e, MEYER_APP) {
 		___buildItemsEmpty()
 	} else {
 		$('.itemsall').text(e.length);
-		for (const key in e) {
-			if (Object.hasOwnProperty.call(e, key)) {
-				console.log(e[key]);
-			}
-		}
 	}
 	// PAGING
 	if (parseInt(getParameterByName('page'))) {

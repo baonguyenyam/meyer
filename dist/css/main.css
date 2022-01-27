@@ -9046,8 +9046,8 @@ section.products .item {
     section.products .item .product-item .more {
       margin-bottom: 0; }
       section.products .item .product-item .more a {
-        background: #b3b3b3;
-        border-color: #b3b3b3;
+        background: #d9d9d9;
+        border-color: #d9d9d9;
         border-radius: 2px;
         text-transform: uppercase;
         font-size: .8rem; }
