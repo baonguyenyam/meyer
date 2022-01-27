@@ -28,7 +28,7 @@ function ___buildItems(e) {
 			}
 		}
 		$('#staticBackdrop .modal-title').text(e.name);
-		$('#staticBackdrop .modal-body').html('<div class="row item"> <div class="col-lg-4"><img class="w-100" src="' + e.api_featured_image + '"></div> <div class="col-lg-8"> <div class="product-item"> <h3>' + e.name + '</h3> <p class="price mb-1">$' + e.price + '</p> <p class="rating"  data-rating="' + e.rating + '">'+array_stars+'</p> <ul class="colors list-inline">' + array_colors + '</ul> <p class="desc">' + e.description + '</p> <p class="more"><a class="btn btn-primary" href="' + e.product_link + '" target="_blank">View More <i class="fas fa-external-link-alt"></i></a></p> </div> </div> </div>');
+		$('#staticBackdrop .modal-body').html('<div class="row item"> <div class="col-lg-4"><img class="w-100" src="' + e.api_featured_image + '"></div> <div class="col-lg-8"> <div class="product-item"> <h3>' + e.name + '</h3> <p class="price mb-1">$' + e.price + '</p> <p class="rating"  data-rating="' + e.rating + '">'+array_stars+'</p> <ul class="colors list-inline">' + array_colors + '</ul> <p class="desc">' + e.description + '</p> <p class="more"><a class="btn btn-primary" href="' + e.product_link + '" target="_blank">View More &nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></a></p> </div> </div> </div>');
 	})
 }
 function ___buildItemsEmpty(e) {

@@ -12,7 +12,7 @@ block body
 				.row
 					.col-md.mr-auto
 						h2.d-flex.align-items-center PRODUCTS 
-							span.badge.badge-success.itemsall.small.ml-2
+							span.badge.itemsall.small.ml-2
 					.col-md-auto
 						.row
 							.col-auto.pr-0
@@ -23,9 +23,9 @@ block body
 		.container.py-3
 			.row 
 				.col-lg-3.order-lg-1.order-2
-					.d-flex.mb-4.justify-content-between.align-items-center
+					.d-flex.mt-5.mt-md-0.mb-4.justify-content-between.align-items-center
 						h4 Filter by
-						a.filter_by.small.btn.btn-danger.btn-small(href="./") Clear
+						a.filter_by.small.btn.btn-danger.btn-small.d-none(href="./") Clear
 					h6.pb-3.mb-3.border-bottom Type 
 					.mb-4
 						#customType
@@ -55,6 +55,11 @@ block body
 							| 
 							| Loading...
 				.col-lg-9.order-lg-1.order-1
+					nav(aria-label="breadcrumb")
+						ol.breadcrumb.d-md-flex.justify-content-end.d-none
+							li.breadcrumb-item
+								a(href="./") Meyer
+							li.breadcrumb-item.active(aria-current="page") Shop
 					.row#items
 					#loading.loading
 						i.fas.fa-sync.fa-spin
@@ -76,7 +81,7 @@ block body
 					.row 
 						.col
 							nav.d-flex.justify-content-end
-								ul.pagination#paging
+								ul.pagination.pagination-sm#paging
 									li.page-item.disabled
 										span.page-link Pages
 									

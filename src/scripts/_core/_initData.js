@@ -88,5 +88,7 @@ function ___filterData(e, MEYER_APP) {
 	}
 	MEYER_APP.buildPaging(MEYER_APP.MEYER_DEFAULT_PAGE, e.length);
 	$('.loading').hide();
-
+	if(getParameterByName('color') || getParameterByName('type') || getParameterByName('price') || getParameterByName('rating') || getParameterByName('sort') || getParameterByName('showItems') || getParameterByName('page')){
+		$('.filter_by').removeClass('d-none');
+	}
 }
