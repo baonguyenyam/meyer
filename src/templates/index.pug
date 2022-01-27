@@ -29,17 +29,37 @@ block body
 					h6.pb-3.mb-3.border-bottom Type 
 					.mb-4
 						#customType
+						.loading
+							i.fas.fa-sync.fa-spin
+							| 
+							| Loading...
 					h6.pb-3.mb-3.border-bottom Price
 					.mb-4
-						input#customPrice.custom-range(type="range")
+						input#customPrice.custom-range.d-none(type="range")
+						.loading
+							i.fas.fa-sync.fa-spin
+							| 
+							| Loading...
 					h6.pb-3.mb-3.border-bottom Rating
 					.mb-4
 						#customRating
+						.loading
+							i.fas.fa-sync.fa-spin
+							| 
+							| Loading...
 					h6.pb-3.mb-3.border-bottom Color
 					.mb-4
 						#customColors
+						.loading
+							i.fas.fa-sync.fa-spin
+							| 
+							| Loading...
 				.col-lg-9.order-lg-1.order-1
 					.row#items
+					#loading.loading
+						i.fas.fa-sync.fa-spin
+						| 
+						| Loading...
 						//- .col-sm-6.col-md-4.item
 							.product-item
 								img(src="./img/demo1.png")
@@ -70,3 +90,7 @@ block body
 					button.close(type="button", data-dismiss="modal", aria-label="Close")
 						i.fas.fa-times
 				.modal-body
+					#loading_modal.loading
+						i.fas.fa-sync.fa-spin
+						| 
+						| Loading...
